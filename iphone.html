@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="iphone.css">
+</head>
+
+<body>
+    <section class="sec">
+        <header>
+            <a href="#"><img src="logo.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Продукты</a></li>
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2>Представляем НОВЫЙ <br> <span>iPhone 12</span></h2>
+                <div id="result" style="color: white;"></div>
+                <a href="#">Заказать сейчас</a>
+            </div>
+            <div class="imgbox">
+                <img src="grey.png" class="iphone">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="grey.png" onclick="imgSlider('grey.png'); changeBgColor('#4f5b66')"></li>
+            <li><img src="red.png" onclick="imgSlider('red.png'); changeBgColor('#ff2400')"></li>
+            <li><img src="white.png" onclick="imgSlider('white.png'); changeBgColor('#0a0a0a')"></li>
+        </ul>
+        <ul class="social">
+            <li>
+                <a href="#"><img src="vk.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="instagram.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="facebook.png" alt=""></a>
+            </li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function imgSlider(anything) {
+            document.querySelector('.iphone').src = anything;
+        }
+
+        function changeBgColor(color) {
+            const sec = document.querySelector('.sec');
+            sec.style.background = color;
+        }
+    </script>
+
+    <script>
+        var text = "Процессор A14 Bionic далеко впереди других процессоров iPhone. Система камер Pro гораздо лучше работает при слабом освещении — а на iPhone 12 Pro Max ещё лучше. Ceramic Shield в четыре раза снижает риск повреждений дисплея при падении.Давайте посмотрим, как тут всё устроено."; // Ваш текст
+        var delay = 50; // Скорость печатания
+        var elem = document.getElementById("result"); // id элемента для вывода результата
+
+        var print_text = function(text, elem, delay) {
+
+            if (text.length > 0) {
+
+                elem.innerHTML += text[0];
+
+                setTimeout(
+
+                    function() {
+
+                        print_text(text.slice(1), elem, delay);
+
+                    }, delay
+
+                );
+
+            }
+
+        }
+
+        print_text(text, elem, delay);
+    </script>
+</body>
+
+</html>
