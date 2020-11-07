@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#fead06, #c00def);
+}
+.container{
+    position: relative;
+    padding: 70px 40px;
+    background: white;
+    border-radius: 20px;
+    -webkit-box-shadow: 51px -41px 18px 5px rgba(71,6,71,1);
+    -moz-box-shadow: 51px -41px 18px 5px rgba(71,6,71,1);
+    box-shadow: 51px -41px 18px 5px rgba(71,6,71,1);
+}
+.container h2{
+    color: #111;
+    margin-bottom: 45px;
+    line-height: 1em;
+    font-weight: 500;
+    padding-left: 10px;
+    border-left: 5px solid #e91e63;
+}
+.container .inputbox{
+    position: relative;
+    width: 300px;
+    height: 46px;
+    margin-bottom: 35px;
+}
+.container .inputbox:last-child{
+    margin-bottom: 0;
+}
+.container .inputbox input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid black;
+    background: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+    color: black;
+    font-weight: 300;
+}
+.container .inputbox span{
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    padding: 10px;
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    font-weight: 300;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.container .inputbox input:focus ~ span,
+.container .inputbox input:valid ~ span
+{
+    transform: translateX(-12px) translateY(-40px);
+    font-size: 14px;
+}
+
+.container .inputbox input[type="submit"]{
+    background: #111;
+    color: white;
+    border: none;
+    max-width: 120px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.container .inputbox input[type="submit"]:hover{
+    background-color: blue;
+
+}
+@media screen and (max-width: 479px) {
+    /* стили для телефонов - начало */
+    .container{
+        padding: 30px 20px;
+        box-shadow: 15px -21px 8px 0px rgba(71,6,71,1);
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+        .container{
+            padding: 140px 60px;
+        }
+        h2{
+            font-size: 4em;
+        }
+        .form{
+            width: auto;
+        }
+        .container .inputbox input{
+            font-size: 2em;
+            width: 350px;
+        }
+        .container .inputbox input[type="submit"]{
+            max-width: 250px;
+        }
+        .container .inputbox span{
+            font-size: 25px;
+        }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* стили для больших планшетов - начало */
+    .container{
+        padding: 200px 90px;
+    }
+    h2{
+        font-size: 4em;
+    }
+    .form{
+        width: auto;
+    }
+    .container .inputbox input{
+        font-size: 2em;
+       
+        width: 350px;
+    }
+    .container .inputbox input[type="submit"]{
+        max-width: 250px;
+    }
+    .container .inputbox span{
+        font-size: 25px;
+    }
+    .container .inputbox input:focus ~ span,
+.container .inputbox input:valid ~ span
+{
+    transform: translateX(-12px) translateY(-40px);
+    font-size: 22px;
+}
+    }
